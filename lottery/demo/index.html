@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<title>九宫格</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<script>
+		(function(doc,win){var docEl=doc.documentElement,resizeEvt="orientationchange" in window?"orientationchange":"resize",recalc=function(){var clientWidth=docEl.clientWidth;if(!clientWidth){return}if(clientWidth<640){docEl.style.fontSize=clientWidth/10+"px"}else{docEl.style.fontSize="64px"}};if(!doc.addEventListener){return}win.addEventListener(resizeEvt,recalc,false);doc.addEventListener("DOMContentLoaded",recalc,false)})(document,window);
+	</script>
+</head>
+<body>
+    <!-- 积分抽奖 -->
+    <div class="boxs awardBox">
+        <div class="award" id="lottery">
+            <div class="awardList lottery-unit lottery-unit-0">
+                <img src="img/1.png">
+                <p>iPhone8 Plus<br/>¥7988</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-1">
+                <img src="img/2.png">
+                <p>小米平衡车<br/>¥1999</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-2 nmar">
+                <img src="img/3.png">
+                <p>电动牙刷<br/>¥259</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-7">
+                <img src="img/4.png">
+                <p style="line-height:.9rem;">50元京东卡</p>
+            </div>
+            <img src="img/5.png" class="btn">
+            <div class="awardList lottery-unit lottery-unit-3 nmar" style="margin-left:.2rem;">
+                <img src="img/6.png">
+                <p style="line-height:.9rem;">免费再来一次</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-6">
+                <img src="img/7.png">
+                <p style="line-height:.9rem;">下次努力</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-5">
+                <img src="img/8.png">
+                <p>防雾霾口罩<br/>¥99</p>
+            </div>
+            <div class="awardList lottery-unit lottery-unit-4 nmar">
+                <img src="img/9.png">
+                <p>米家智能监控<br/>¥199</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+   
+</body>
+<script type="text/javascript" src='jquery-2.2.0.min.js'></script>
+<script type="text/javascript" src='lottery.js'></script>
+<script>
+   lottery.lottery({
+        selector:'#lottery',
+        element:'.lottery-unit',
+        start:'.btn'
+   })
+</script>
+</html>

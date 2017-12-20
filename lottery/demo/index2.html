@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title>lottery</title>
+<script src="jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="lottery.js" type="text/javascript"></script>
+<style>
+	*, :after, :before {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	main{padding-top: 3em;}
+	table {
+		border-spacing: 0;
+		border-collapse: collapse;
+		text-align: center;
+	}
+	
+	.draw {
+		width: 560px;
+		height: 600px;
+		margin: 0 auto;
+		padding:51px;
+		background-image: url(images/bg.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	
+	.draw .item {
+		width: 150px;
+		height: 150px;
+		background-image: url(images/bg1.png);
+		background-repeat: no-repeat;
+		background-size: 96%;
+	}
+	
+	.draw .item.active {
+		background-image: url(images/bg2.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	
+	.draw .img {
+		display: table-cell;
+		width: 150px;
+		height: 61px;
+		vertical-align: middle;
+		text-align: center;
+	}
+	
+	.draw .img img {
+		vertical-align: top;
+	}
+	
+	.draw .gap {
+		width: 5px;
+	}
+	
+	.draw .gap-2 {
+		height: 5px;
+	}
+	
+	.draw .name {
+		display: block;
+		margin-top: 10px;
+		font-size: 14px;
+	}
+	
+	.draw .draw-btn {
+		display: block;
+		height: 150px;
+		line-height: 150px;
+		border-radius: 20px;
+		font-size: 25px;
+		font-weight: 700;
+		text-decoration: none;
+		background-image: url(images/bg3.png);
+		background-repeat: no-repeat;
+		background-size: 96%;
+	}
+</style>
+
+</head>
+<body ng-app="mainApp" ng-controller="indexCtrl" style="background: #f02d2f;">
+
+<div class="headerWrapper container-fluid">
+	
+</div>
+
+<main style="background: #f02d2f;">
+	<div class="draw" id="lottery">
+		<table>
+			<tr>
+				<td class="item lottery-unit lottery-unit-0">
+					<div class="img">
+						<img src="images/img1.png" alt="">
+					</div>
+					<span class="name">终身VIP会员</span>
+				</td>
+				<td class="gap"></td>
+				<td class="item lottery-unit lottery-unit-1">
+					<div class="img">
+						<img src="images/img2.png" alt="">
+					</div>
+					<span class="name">三年VIP会员</span>
+				</td>
+				<td class="gap"></td>
+				<td class="item lottery-unit lottery-unit-2">
+					<div class="img">
+						<img src="images/img3.png" alt="">
+					</div>
+					<span class="name">半年VIP会员</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="gap-2" colspan="5"></td>
+			</tr>
+			<tr>
+				<td class="item lottery-unit lottery-unit-7">
+					<div class="img">
+						<img src="images/img4.png" alt="">
+					</div>
+					<span class="name">399元充值卡一张</span>
+				</td>
+				<td class="gap"></td>
+				<td class="">
+					<a class="draw-btn start" href="javascript:"></a>
+				</td>
+				<td class="gap"></td>
+				<td class="item lottery-unit lottery-unit-3">
+					<div class="img">
+						<img src="images/img5.png" alt="">
+					</div>
+					<span class="name">100元充值卡一张</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="gap-2" colspan="5"></td>
+			</tr>
+			<tr>
+				<td class="item lottery-unit lottery-unit-6">
+					<div class="img">
+						<img src="images/img7.png" alt="">
+					</div>
+					<span class="name">免费体验一次</span>
+				</td>
+				<td class="gap"></td>
+				<td class="item lottery-unit lottery-unit-5">
+					<div class="img">
+						<img src="images/img6.png" alt="">
+					</div>
+					<span class="name">九折优惠券一张</span>
+				</td>
+				<td class="gap"></td>
+				<td class="item lottery-unit lottery-unit-4">
+					<div class="img">
+						<img src="images/img8.png" alt="">
+					</div>
+					<span class="name">参与大礼包一份</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</main>
+
+<!--Import Copyright -->
+
+<script type="text/javascript">
+window.onload = function () {
+	lottery.lottery({
+		selector: '#lottery',
+		getIndex:function(){
+			this.options.target =2
+
+		}
+	})
+}
+</script>
+
+
+<div id='info' style = "display : none">
+   <a href=""><img src="images/tk_img.png"></a>
+   <h1>100元</h1>
+</div>
+</body>
+</html>
